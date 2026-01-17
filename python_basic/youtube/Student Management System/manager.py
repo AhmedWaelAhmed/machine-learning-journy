@@ -7,8 +7,9 @@ class SystemManager:
         self.Students = {}
         self.Courses = {}
     
-    def add_student(self, name):
-        student = Student(name)
+    def add_student(self, name, age):
+        # Fix: Passed age to Student constructor
+        student = Student(name, age)
         self.Students[student.student_id] = student
         print(f"Student {student.name} added with ID {student.student_id}.")
         

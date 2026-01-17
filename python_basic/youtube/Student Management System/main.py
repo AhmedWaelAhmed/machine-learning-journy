@@ -17,7 +17,12 @@ def show_menu():
 
 def add_student_handler(manager):
     name = input("Enter student name: ")
-    manager.add_student(name)
+    # Fix: Ask for age and handle errors
+    try:
+        age = int(input("Enter student age: "))
+        manager.add_student(name, age)
+    except ValueError:
+        print("Invalid input! Age must be a number.")
 
 def core():
     manager = SystemManager()

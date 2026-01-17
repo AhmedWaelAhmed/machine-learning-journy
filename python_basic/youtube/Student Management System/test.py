@@ -4,7 +4,8 @@ from student import Student
 
 class TestStudent(unittest.TestCase):
     def setUp(self):
-        self.student = Student("Ahmed")
+        # Fix: Added age (22) to the constructor
+        self.student = Student("Ahmed", 22)
         
     def test_creation(self):
         self.assertEqual(self.student.name, "Ahmed")

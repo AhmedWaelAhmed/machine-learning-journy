@@ -8,11 +8,12 @@ class Person:
 class Student(Person):
     _id_counter = 1
     
-    def __init__(self, name, age):
+    # التعديل هنا: جعلنا age=0 كقيمة افتراضية
+    def __init__(self, name, age=0):
+        # نمرر الاسم والعمر (الذي سيكون 0 إذا لم يدخله أحد) للكلاس الأب
+        super().__init__(name, age)
         self.student_id = Student._id_counter
         Student._id_counter += 1
-        self.name = name
-        self.age = age
         self.grades = {}
         self.enrolled_courses = []
     
